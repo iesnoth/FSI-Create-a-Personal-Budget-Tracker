@@ -1,13 +1,19 @@
-let weeklyExpenses = 0
-let monthlyExpenses = 0
-let annualExpenses = 0
+let weeklyExpenses = iterateOverQuestions(weeklyExpenseQuestions);
+let monthlyExpenses = iterateOverQuestions(monthlyExpenseQuestions)
+let annualExpenses = iterateOverQuestions(annualExpenseQuestions)
 
 // Your Code Here
-for(let i =0; i <weeklyExpenseQuestions.length; i++){
-    let answer= parseInt(window.prompt(weeklyExpenseQuestions[i]))
+function iterateOverQuestions(array){
+    let sum = 0
+    for(let i =0; i <array.length; i++){
+    let answer= parseInt(window.prompt(array[i]))
     console.log(answer);
-    weeklyExpenses = weeklyExpenses + answer;
+    sum += answer;
+    }
+    return sum
 }
+
+iterateOverQuestions(weeklyExpenseQuestions)
 
 function iterateOverQuestions(array){
 for(let i =0; i <monthlyExpenseQuestions.length; i++){
@@ -16,11 +22,3 @@ for(let i =0; i <monthlyExpenseQuestions.length; i++){
     monthlyExpenses = monthlyExpenses + answer;
 }
 }
-
-iterateOverQuestions(annualExpenseQuestions)
-/*for(let i =0; i <annualExpenseQuestions.length; i++){
-    let answer= parseInt(window.prompt(annualExpenseQuestions[i]))
-    console.log(answer);
-    annualExpenses = annualExpenses + answer;
-}
-*/
